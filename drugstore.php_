@@ -1,0 +1,313 @@
+<?php
+session_start();
+
+include('conn.inc.php');
+if ($_SESSION['username']=='') {
+	header('Location: index.php');
+}
+
+$mode=$_POST['Submit'];
+
+//save drug group//////////////////////////
+$sdg=$_POST['btnDrugGroup'];
+if ($sdg=="Save") {
+
+	$groupname=$_POST["txtDrugGroup"];
+	$comments=$_POST['txtComments'];
+	$sql="insert into `clinicops`.`druggroups` 
+	(Name,comment)
+	values
+	('" . $groupname . "','" . $comments . "')";
+	$rs=$db->execute($sql);
+	$msg="saved";	
+	header('Location: drugstore.php?msg=' . $msg  );
+}
+///////////////////////////////////////////////////////
+
+//save drug////////////////////////////////////////
+$sd=$_POST['Submit'];
+if ($sd) {
+//get posted value
+		$drugcode=$_POST['txtDrugCode'];
+		$drugname=$_POST['txtDrugName'];
+		$druggroup=$_POST['cboDrugGroup'];
+		$drugdesc=$_POST['txtDrugDesc'];
+		$stockqty=$_POST['txtStockQty'];
+		$dispense=$_POST['cboDispenseMode'];
+		$unitmeasure=$_POST['txtUnitMsm'];
+		$reorderlevel=$_POST['txtRrdLevel'];
+		$dosage=$_POST['txtDosage'];
+		$sql="insert into drugstore 
+	(drugcode, drugname, druggroup, description, unitmeasure, 
+	qtyinstock, dosage, reorderlevel, dispensemode)
+	values
+	('" . $drugcode ."','". $drugname ."','".  $druggroup ."','".  $drugdesc ."','".  $unitmeasure ."','".  
+	$stockqty  ."','" . $dosage ."','" . $reorderlevel ."','".  $dispense  . "')";
+		$rs=$db->execute($sql);
+		//was our insert successful?
+		if ($rs==true) {
+ 			$msg="saved";
+		 } else {
+			$msg='unable to save information';
+		}
+}
+/////////////////////////////////////////////////////////////////
+
+$osql="SELECT * from drugstore ";
+if ($_GET['mode']=='edit') {
+	$showvalues=true;
+//get values from the database
+$dc=$_GET['dc'];
+if ($dc) {
+	$esql="select * from `clinicops`.`drugstore` where entryid=" . $dc ;
+	$erst=$db->execute($esql);
+}
+}
+
+	//delete the drug
+	if ($_GET['mode']=='delete') {
+		$drugcode=$_POST['txtDrugCode'];
+		$drugname=$_POST['txtDrugName'];
+		$druggroup=$_POST['cboDrugGroup'];
+		$drugdesc=$_POST['txtDrugDesc'];
+		$stockqty=$_POST['txtStockQty'];
+		$dispense=$_POST['cboDispenseMode'];
+		$unitmeasure=$_POST['txtUnitMsm'];
+		$reorderlevel=$_POST['txtRrdLevel'];
+		$entryid=$_GET['dc'];
+		$newqty=$_POST['txtNewQty'];
+		$dosage=$_POST['txtDosage'];
+		$usql="delete from drugstore where entryid=" . $entryid ;
+		$urst=$db->execute($usql);
+	}//end if
+	
+
+switch ($mode) :
+	case 'Update';
+		//update the drugs specified
+		//get posted value
+		$drugcode=$_POST['txtDrugCode'];
+		$drugname=$_POST['txtDrugName'];
+		$druggroup=$_POST['cboDrugGroup'];
+		$drugdesc=$_POST['txtDrugDesc'];
+		$stockqty=$_POST['txtStockQty'];
+		$dispense=$_POST['cboDispenseMode'];
+		$unitmeasure=$_POST['txtUnitMsm'];
+		$reorderlevel=$_POST['txtRrdLevel'];
+		$entryid=$_POST['entryid'];
+		$newqty=$_POST['txtNewQty'];
+		$dosage=$_POST['txtDosage'];
+		$usql=" update `clinicops`.`drugstore` 
+		SET drugcode='". $drugcode . "', drugname='" .$drugname ."', druggroup='" .$druggroup ."', description='" . $drugdesc . "', unitmeasure='" . $unitmeasure ."', 
+	qtyinstock=qtyinstock + " . $newqty . ", dosage='" . $dosage ."', reorderlevel= '" . $reorderlevel . "', dispensemode ='" .$dispense . "' WHERE entryid=" . $entryid ;
+		$urst=$db->execute($usql);
+		break;
+endswitch;
+
+
+$action=$_POST['Search'];
+$criteria=$_POST['txtDrugParam'];
+$clause=$_POST['cboCriteria'];
+
+if (($action=='search') and ($criteria!="")) {
+//run a search for selected drugs
+		
+		switch ($clause):
+		//drugs like
+		case 1:
+			$osql = "select * from drugstore where drugname like '%" . $criteria . "%' " ;
+			break;
+		//drugs like or alternative to	 
+		case 2:
+			$osql="SELECT druggroup from drugstore where drugname like '%" . $criteria . "%'";
+			$rs=$db->execute($osql);
+			if ($rs->EOF==false) {
+  				$osql="SELECT * from drugstore where drugname LIKE '%" . $criteria                 ."%' OR druggroup   = '" . $rs->fields('druggroup') . "'";
+			}
+			break;
+			//alternative drug to
+		case 3:
+			$osql="SELECT druggroup from drugstore where drugname LIKE '%" . $criteria . "%'";
+			$rs=$db->execute($osql);
+			if ($rs->EOF==false) {
+				$osql="SELECT * from drugstore where druggroup='" . $rs->fields('druggroup') . "'" ;
+				}
+			break;
+			//drug groups like
+		case 4:
+			$osql = "select * from drugstore where druggroup like '%" . $criteria . "%'" ;
+			break;
+		endswitch;
+		
+}
+include ('head.php');
+?>
+
+<table width="100%" border="0">
+  <tr>
+    <td align="center" valign="top"><table width="600" border="0">
+      <tr>
+        <td></td>
+      </tr>
+      
+      <tr>
+        <td align="left"><span class="style2"><a href="admin.setup.php">Setup</a> - Drug Store </span></td>
+      </tr>
+      <tr>
+        <td><form name="drugs" method="post" action="drugstore.php"><table width="100%" id="tbldrugstore">
+          <tr>
+            <td colspan="4"><table width="100%" border="0" class="doc_attend">
+                <tr>
+                  <td class="article-title">Get from store </td>
+                  <td><select name="cboCriteria" class="textfield" id="cboCriteria">
+                      <option value="1" selected="selected">Drugs Like</option>
+                      <option value="2">Drugs Like Or Alternate Drug To</option>
+                      <option value="3">Alternate Drug To</option>
+                      <option value="4">Drug Groups like</option>
+                  </select></td>
+                  <td><input name="txtDrugParam" type="text" class="textfield" id="txtDrugParam" />
+                      <input name="Search" type="submit" class="btnadd" id="Search" value="search" /></td>
+                </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td width="18%"></td>
+            <td width="22%">&nbsp;</td>
+            <td width="17%">&nbsp;</td>
+            <td width="20%">&nbsp;</td>
+          </tr>
+          <tr class="caption">
+            <td >Drug Store</td>
+            <td >&nbsp;</td>
+            <td >&nbsp;</td>
+            <td >&nbsp;</td>
+          </tr>
+          <tr>
+            <td >Drug Code </td>
+            <td><input name="txtDrugCode" type="text" class="textfield" id="txtDrugCode" value="<?php if ($erst->fields) { echo $erst->fields('drugcode') ; }  ?>" />
+              <input name="entryid" type="hidden" id="entryid" value="<?php if ($erst->fields) { echo $erst->fields('entryid') ; }  ?>" /></td>
+            <td class="style4">Drug Description </td>
+            <td><textarea name="txtDrugDesc" class="textfield" id="txtDrugDesc"><?php if ($erst->fields) { echo $erst->fields('description') ; }  ?>
+            </textarea></td>
+          </tr>
+          <tr>
+            <td class="style4">Drug name </td>
+            <td><input name="txtDrugName" type="text" class="textfield" id="txtDrugName" value="<?php if ($erst->fields) { echo $erst->fields('drugname') ; }  ?>"/></td>
+            <td class="style4">Unit of measurement</td>
+            <td><input name="txtUnitMsm" type="text" class="textfield" id="txtUnitMsm" value="<?php if ($erst->fields) { echo $erst->fields('unitmeasure') ; }  ?>"/></td>
+          </tr>
+          <tr>
+            <td class="style4">Drug Group </td>
+            <td><select name="cboDrugGroup" id="cboDrugGroup">
+              <?php $sql="select name from druggroups ";
+			$rs=$db->execute($sql);
+			while ($rs->EOF==false):
+			
+			?>
+              <option value="<?php  echo $rs->fields('entryid');  ?>">
+              <?php  echo $rs->fields('name');  ?>
+              </option>
+              <?php $rs->MoveNext(); 
+			 endwhile; ?>
+            </select></td>
+            <td class="style4">Re-order level</td>
+            <td><input name="txtRrdLevel" type="text" class="textfield" id="txtRrdLevel" value="<?php if ($erst->fields) { echo $erst->fields('reorderlevel') ; }  ?>"/></td>
+          </tr>
+          <tr>
+            <td class="style4">Quantity in stock </td>
+            <td><input name="txtStockQty" type="text" class="textfield" id="txtStockQty" value="<?php if ($erst->fields) { echo $erst->fields('qtyinstock') ; }  ?>" /></td>
+            <td class="style4">Dosage</td>
+            <td><input name="txtDosage" type="text" class="textfield" id="txtDosage" value="<?php if ($erst->fields) { echo $erst->fields('dosage') ; }  ?>"/></td>
+          </tr>
+          <tr>
+		  <?php if ($showvalues==true) {?>
+            <td class="style4">Quantity to add </td>
+            <td><input name="txtNewQty" type="text" class="textfield" id="txtNewQty" value="<?php if ($erst->fields) { echo "0" ; }  ?>"/></td>
+            <td class="style4">&nbsp;</td>
+            <td><input name="umode" type="hidden" id="umode"  value="<?php  if($showvalues) { echo edit; } else {echo save; }  ?>"  /></td>
+			<?php } ?>
+          </tr>
+          <tr>
+            <td class="style4">Dispense </td>
+            <td class="style4"><select name="cboDispenseMode" id="cboDispenseMode">
+              <option value="Prescription" selected="selected">Prescription</option>
+              <option value="Request">Request</option>
+              <?php $sql="select name from `clinicops`.`druggroups";
+			$rs=$db->execute($sql);
+			while ($rs->EOF==false):
+			
+			?>
+              <?php $rs->MoveNext(); 
+			 endwhile; ?>
+                                    </select></td>
+            <td class="style4">&nbsp;</td>
+            <td><input name="Submit" type="submit" class="btnadd" value="<?php  if($showvalues) { echo Update; } else {echo 'Add>>'; }  ?>" /></td>
+          </tr>
+          <tr>
+            <td class="errormsg"><?php echo $msg ?></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="4"><?php 
+			$rst=$db->execute($osql);
+			echo " 
+				<table width=100% border=0 >
+                  <tr class=tbldata><span class=style1>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                    <td>Drug name</td>
+                    <td>Drug Group</td>
+					<td>Dispense Mode</td>
+					<td>Quantity</td></span>
+                  </tr>";
+				 
+				    while ($rst->EOF==false):
+					  echo "<tr class=tbldata><td>"; 
+					  echo '<a href=drugstore.php?mode=edit&dc=' . $rst->fields('entryid') . '>edit  </a></td>';
+					 echo '<td><a href=drugstore.php?mode=delete&dc=' . $rst->fields('entryid') . '>delete</a></td>';
+					 echo '<td>' . $rst->fields('drugname') . '</td>';
+					 echo '<td>' . $rst->fields('druggroup') . '</td>';
+				     echo '<td>' . $rst->fields('dispensemode') . '</td>';
+					  echo '<td>' . $rst->fields('qtyinstock') . '</td>';
+					 echo '</tr>';
+					 $rst->movenext();
+	    		  endwhile;
+				  echo "</table>";
+			 ?>            </td>
+          </tr>
+        </table>
+        </form></td>
+      </tr>
+      <tr>
+        <td><form name="druggroup" method=post action="drugstore.php"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <tr class="caption">
+            <td width="17%" >Drug Store</td>
+            <td width="23%" >&nbsp;</td>
+            <td width="14%" >&nbsp;</td>
+            <td colspan="2" >&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Drug group </td>
+            <td><input name="txtDrugGroup" type="text" class="textfield" id="txtDrugGroup" /></td>
+            <td>Comments</td>
+            <td colspan="2"><textarea name="txtComments" class="textfield" id="txtComments"></textarea></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td width="25%">&nbsp;</td>
+            <td width="21%"><input name="btnDrugGroup" type="submit" class="btnadd" id="btnDrugGroup" value="Save" /></td>
+          </tr>
+        </table>
+        </form></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<?php include ('foot.php');?>

@@ -1,0 +1,208 @@
+"General"
+{
+"ProjectIdGuid" = "{E9106579-4E06-4A51-9E14-07F4E03E75A2}"
+"ProjectVersion" = "2.0.1.2566"
+}
+"Configurations"
+{
+    "Local|PHP 4"
+    {
+    "IncludeDirs" = ""
+    }
+    "Local|PHP 5"
+    {
+    "IncludeDirs" = ""
+    }
+    "Remote|PHP 4"
+    {
+    "IncludeDirs" = ""
+    }
+    "Remote|PHP 5"
+    {
+    "IncludeDirs" = ""
+    }
+}
+"Files"
+{
+    "adodb\\adodb-csvlib.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\adodb-datadict.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\adodb-error.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\adodb-errorhandler.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\adodb-errorpear.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\adodb-exceptions.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\adodb-iterator.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\adodb-lib.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\adodb-pager.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\adodb-pear.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\adodb-perf.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\adodb-php4.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\adodb-time.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\adodb-time.zip"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\adodb-xmlschema.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\adodb.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\license.txt"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\pivottable.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\readme.txt"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\rsfilter.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\server.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\toexport.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\tohtml.inc.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "adodb\\xmlschema.dtd"
+    {
+    "ProjRelPath" = "T"
+    }
+    "clinicops_storyboard.ppt"
+    {
+    "ProjRelPath" = "T"
+    }
+    "admin.setup.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "conn.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "datepulldown.class.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "default.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "drugstore.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "functions.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "home.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "new.patient.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "patient.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "patientbio.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "pharm.attend.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "reports.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "save.patient.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "show.patient.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "show.vitals.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "styles.css"
+    {
+    "ProjRelPath" = "T"
+    }
+    "users.php"
+    {
+    "ProjRelPath" = "T"
+    }
+    "vitals.patient.php"
+    {
+    "ProjRelPath" = "T"
+    }
+}
+"ProjStartupServices"
+{
+}
+"Globals"
+{
+}
+"References"
+{
+}

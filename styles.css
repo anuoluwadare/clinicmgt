@@ -1,0 +1,194 @@
+.Menubar {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #666666;
+}
+.ItemTitle{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#003399;
+	font-size:12px;
+	font-weight:bold;
+}
+
+.MiniHeader{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#999966;
+	font-size:13px;
+	font-weight:bold;
+	
+
+}
+
+A:link {
+	TEXT-DECORATION: none
+}
+A:active {
+	TEXT-DECORATION: none
+}
+A:visited {
+	TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #336699; TEXT-DECORATION: none
+}
+A.lgrey:link {
+	TEXT-DECORATION: none
+}
+A.lgrey:active {
+	TEXT-DECORATION: none
+}
+A.lgrey:visited {
+	TEXT-DECORATION: none
+}
+A.lgrey:hover {
+	COLOR: #cccccc; TEXT-DECORATION: none
+}
+A.dgrey:link {
+	COLOR: #777777; TEXT-DECORATION: none
+}
+A.dgrey:active {
+	COLOR: #777777; TEXT-DECORATION: none
+}
+A.dgrey:visited {
+	COLOR: #777777; TEXT-DECORATION: none
+}
+A.dgrey:hover {
+	COLOR: #6699cc; TEXT-DECORATION: none
+}
+A.black:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.black:active {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.black:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.black:hover {
+	COLOR: #6699cc; TEXT-DECORATION: none
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #a6a6a6; SCROLLBAR-HIGHLIGHT-COLOR: #cacaca; SCROLLBAR-SHADOW-COLOR: #000000; SCROLLBAR-3DLIGHT-COLOR: #445555; SCROLLBAR-ARROW-COLOR: #ffffff; SCROLLBAR-TRACK-COLOR: #c8c8c8; SCROLLBAR-DARKSHADOW-COLOR: #aaaaaa
+}
+BLOCKQUOTE {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px
+}
+UL {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px
+}
+FORM {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px
+}
+.title-section {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 20px; FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #444444; LINE-HEIGHT: 15px; PADDING-TOP: 6px; FONT-FAMILY: Arial,Helvetica,Verdana,Geneva,sans-serif; LETTER-SPACING: 1px
+}
+.bold-blue {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #5d6880; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+.title-page {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 40px; FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #000000; LINE-HEIGHT: 15px; FONT-FAMILY: Arial,Helvetica,Verdana,Geneva,sans-serif; LETTER-SPACING: 1px
+}
+.textbox-content {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 11px; COLOR: #000000; LINE-HEIGHT: 15px; PADDING-TOP: 5px; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+.bigger-content {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 13px; COLOR: #000000; LINE-HEIGHT: 15px; PADDING-TOP: 5px; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+.smaller-content {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+.article-title {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #000000; LINE-HEIGHT: 15px; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+.article {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 11px; COLOR: #000000; LINE-HEIGHT: 17px; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif; TEXT-ALIGN: justify
+}
+.article-nav {
+	FONT-WEIGHT: bold; MARGIN-BOTTOM: 10px
+}
+.bot-sites {
+	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+.tut-content {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 11px; COLOR: #000000; LINE-HEIGHT: 15px; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+.tut-step {
+	FONT-WEIGHT: bold; FONT-SIZE: 17px; COLOR: #3399ff; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+.tut-spacer {
+	HEIGHT: 15px
+}
+.spacer-text {
+	FONT-SIZE: 2px; COLOR: #f2f2f2; FONT-FAMILY: Arial,Helvetica,sans-serif
+}
+.greybox {
+	BORDER-RIGHT: #d8d8d8 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #d8d8d8 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; BORDER-LEFT: #d8d8d8 1px solid; WIDTH: 350px; PADDING-TOP: 5px; BORDER-BOTTOM: #d8d8d8 1px solid; HEIGHT: auto; BACKGROUND-COLOR: #eeeeee
+}
+.featured-title {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #3f5068; LINE-HEIGHT: 10px; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif; LETTER-SPACING: 2px
+}
+.featured {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+.smallfont {
+	FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+.footertext {
+	FONT-SIZE: 11px; COLOR: #ffffff; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+.linkdropdown {
+	FONT-SIZE: 9px; BACKGROUND: #4e5e75; COLOR: #ffffff; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+.poll {
+	FONT-WEIGHT: bold; COLOR: #5d6880
+}
+.pollsmall {
+	FONT-SIZE: 10px
+}
+.pollvote {
+	FONT-SIZE: 10px; COLOR: #000000; BACKGROUND-COLOR: #d8d8d8
+}
+.spotlight {
+	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+.texturename {
+	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+.texture-preview {
+	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+#texture-preview {
+	FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+#texturenames2 {
+	FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+#tipdescrip {
+	FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+#maintextnav {
+	FONT-SIZE: 10pt; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+#desktop-descrip {
+	FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+ .errormsg{
+ FONT-SIZE: 10pt; COLOR: #FF0000; FONT-FAMILY: Verdana, Arial, Helvetica;
+ font-weight:bold;
+  }
+  .TableHeader{
+    background-color:#00CCFF;
+	font-weight:bold;
+	   }
+	   
+ .TableRow {
+    background-color:#FFFFCC;
+	font-weight:normal;
+	   }
+   
+.style4 {
+font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; 
+}
+.article-title-white {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #FFFFFF; LINE-HEIGHT: 13px; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}

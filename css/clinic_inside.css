@@ -1,0 +1,220 @@
+/* CSS Document */
+body{
+	font-family:Verdana, Arial, Helvetica, sans-serif ;
+	font-size:11px;
+	
+	}
+
+#login_table{
+	background:url(images/clinicops.gif) ;
+	width:50%;
+	margin:0 220px 0 220px;
+	}
+	
+#tblappoint select{
+	width:200px;
+	margin-left:-15px;
+	}
+	
+	
+input:focus{
+	color:#00CCCC;
+	background-color:#66CCCC;
+	}
+	
+input.textfield{
+	color: #000;
+	border: 1px solid #ccc;
+	width:150px;
+   
+}
+input.btnlogin{
+	float:left;
+	margin-left:7px;
+	background-color: #ADD8E6;
+	border: 1px outset #00008B;
+	width:90px;
+	
+	}
+	
+#tbldrugstore{
+	width:100%;
+	border-collapse:collapse;
+	}
+#tblgeneral{
+	margin:0 220px 0 220px;
+	}
+table.tbldata{
+	width:100%;
+	border-collapse: collapse;
+	}
+/*.tbldata table{
+	width:100%
+	}*/
+.tbldata td, .tbldata th{
+	border:1px solid  #73C0D4;
+	
+	}
+
+.reports tr:hover, .reports tr.hilite {
+background-color: #DFE7F2;
+color: #000000;
+}
+
+.tblshow_patients tr:hover, .tblshow_patients tr.hilite{
+	 background-color: #DFE7F2;
+	color: #000000;
+	}
+	
+.reports{
+	border-collapse:collapse;
+	margin-top:7px;
+	}
+	
+.reports tr{
+	text-decoration:none;
+	color:black;
+	height:20px;
+	font-size:12px;
+	
+	}
+.reports tr:visit{
+	text-decoration:none;
+	}
+.reports tr:active{
+	color:#669999;
+	text-decoration:none;
+	}
+.reports  tr, .reports td{
+	border:1px solid  #73C0D4;
+	}
+.caption{
+	background-color:#3399CC;
+	width:100%;
+	height:20px;
+	
+	}
+.caption td{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+	}
+input.btnadd{
+	background-color: #ADD8E6;
+	border: 1px outset #00008B;
+
+	}
+textarea{
+	width: 200px;
+	height: 40px;
+	color: #00008B;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	
+}
+select{
+	width: 100px;
+	color: #00008B;
+	background-color: #fff;
+	border: 1px solid #00008B;
+}
+
+.doc_attend select{
+	width:200px;
+	}
+.attend_2_patient{
+	float:left;
+	margin-right:550px;
+	}
+.date_field{
+	color: #000;
+	border: 1px solid #ccc;
+	}
+.date_rpt{
+	width:60px;
+	}
+ .date_header {
+ 	background-color:#FF8000;
+	color:#fff;
+	font-weight:bold;
+	}
+.show_header{
+ 	background-color:#FF8000;;
+	color:#fff;
+	font-weight:bold;
+	}
+#password a:link{
+	color:#6699CC;
+	font-size:12px;
+	text-decoration:none;
+	
+	
+	}
+#password a:hover{
+	text-decoration:underline;
+	
+	}
+.navbar tr{
+	background-color:#F3BC07;
+	}
+	
+
+/*.navbar td:link, #menu td:visited{
+	color:#CCCCCC;
+	
+	text-decoration:none;
+	font-size:11px;
+	}
+	*/
+	.navbar {
+	color:#CCCCCC;
+	
+	text-decoration:none;
+	font-size:11px;
+	}
+/*	
+ .navbar td:hover,#navbar td:active{
+	/*color:#6699CC;*/
+/*	color:#000000;
+	text-decoration:underline;
+	font-size:11px;
+
+	} 	*/
+.menubar_inactive
+{
+	color:#CCCCCC;
+	
+
+}
+
+.menubar_active{
+color:#000000;
+font-weight:bold;
+
+}
+ div.txtarea{
+ 	margin-left:-275px;
+	}
+	
+a:link{
+	text-decoration:none;
+	}
+.errormsg{
+ FONT-SIZE: 8pt; COLOR: #FF0000; FONT-FAMILY: Verdana, Arial, Helvetica;
+ font-weight:bold;
+  }
+  .MiniHeader{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#999966;
+	font-size:13px;
+	font-weight:bold;
+}
+	
+.bold-blue {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #5d6880; FONT-FAMILY: Verdana,Geneva,Arial,Helvetica,sans-serif
+}
+
+.title-section {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 20px; FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #444444; LINE-HEIGHT: 15px; PADDING-TOP: 6px; FONT-FAMILY: Arial,Helvetica,Verdana,Geneva,sans-serif; LETTER-SPACING: 1px
+}
